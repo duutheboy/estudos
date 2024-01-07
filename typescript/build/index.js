@@ -73,3 +73,33 @@ class robos {
         this.name = name;
     }
 }
+// classes
+// Para definir um atributo opcional adiciona o "?" no atributo
+// void - metodos que não retornam nada, td que estiver dentro irá ser executado apenas no metodo
+// protected - apenas pode enxergar subclasses que herdam a classe, private só pode ser encxergado dentro da classe
+class Character {
+    constructor(name, stregth, skill) {
+        this.name = name;
+        this.stregth = stregth;
+        this.skill = skill;
+    }
+    attack() {
+        console.log(`attack with ${this.stregth} points`);
+    }
+}
+const Eduardo = new Character("José Eduardo", 10, 20);
+// subclasses para defiinir uma subclasses, utiliza o extends "nome da classe pai"
+class Magician extends Character {
+    constructor(name, stregth, skill, magicPoints) {
+        super(name, stregth, skill);
+        this.magicPoints = magicPoints;
+    }
+}
+const eduardoMago = new Magician("José Eduardo", 20, 10, 99);
+// Generics
+// "..." significa que aceita varios itens, por exemplo mais de um array
+function concatArray(...itens) {
+    return new Array().concat(...itens);
+}
+const newArray = concatArray([1, 3], [33], ["Eduardo"]);
+console.log(newArray);
